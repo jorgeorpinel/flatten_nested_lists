@@ -5,16 +5,14 @@ Author: Jorge Orpinel
 
 
 def flatten_deep(arr: list):
-    """ Flattens arbitrarily-nested list `arr` into single-dimensional. """
-    flat = []
+    """ Flattens arbitrarily-nested list `arr` into single-dimensional.
+    > Generator version """
 
     while arr:
         if isinstance(arr[0], list):  # Checks whether first element is a list
             arr = arr[0] + arr[1:]  # If so, flattens that first element one level
         else:
-            flat.append(arr.pop(0))  # Otherwise add it to the flat array
-
-    return flat  # Could use yield above instead (turning this fn into a generator).
+            yield arr.pop(0)  # Otherwise yield as part of the flat array
 
 
 def flatten_trick(arr:list):
