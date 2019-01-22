@@ -4,7 +4,7 @@ Author: Jorge Orpinel
 """
 
 
-def flatten_deep(arr:list):
+def flatten_deep(arr: list):
     """ Flattens arbitrarily-nested list `arr` into single-dimensional. """
     flat = []
 
@@ -14,7 +14,7 @@ def flatten_deep(arr:list):
         else:
             flat.append(arr.pop(0))  # Otherwise add it to the flat array
 
-    return flat
+    return flat  # Could use yield above instead (turning this fn into a generator).
 
 
 def flatten_trick(arr:list):
